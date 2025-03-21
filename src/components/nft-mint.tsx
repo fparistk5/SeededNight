@@ -49,7 +49,7 @@ export function NftMint(props: Props) {
   };
 
   const increaseQuantity = () => {
-    setQuantity((prev) => prev + 1); // Assuming a max of 10 NFTs can be minted at once
+    setQuantity((prev) => prev + 1); // Assuming a max of 10 NFTs can be minted at once.
   };
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
