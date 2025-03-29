@@ -65,24 +65,15 @@ export function NftMint(props: Props) {
   }
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen transition-colors duration-200">
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source src="/xtllabg.webm" type="video/webm" />
-        Your browser does not support the video tag.
-      </video>
+<div 
+  className="relative flex flex-col items-center justify-center min-h-screen transition-colors duration-200 bg-[url('/seeder555_0006.png')] bg-cover bg-center"
+>
 
       {/* Overlay to improve content visibility */}
       <div className="absolute inset-0 bg-black/30 z-10" />
 
       {/* Connect Wallet Button in Top-Right Corner */}
-      <div className="absolute top-4 right-4 z-20">
+      <div className="absolute  top-4 right-4 z-20">
         <ConnectButton client={client} />
       </div>
 
@@ -91,19 +82,19 @@ export function NftMint(props: Props) {
         {/* GIF with Hover Effect */}
         <div className="mt-24 sm:mt-20 mb-6 group max-w-md w-full">
           <img
-            src="/base.gif"
+            src="/seeded.png"
             alt="Base GIF"
             className="w-full h-auto group-hover:hidden"
           />
           <img
-            src="/hover.gif"
+            src="/seeded.png"
             alt="Hover GIF"
             className="w-full h-auto hidden group-hover:block"
           />
         </div>
 
         {/* Card */}
-        <Card className="w-full max-w-md bg-gray-800">
+        <Card className="w-full max-w-md bg-gray-999 ">
           <CardContent className="pt-6">
             <div className="aspect-square overflow-hidden rounded-lg mb-4 relative">
               {props.isERC1155 ? (
@@ -251,15 +242,15 @@ export function NftMint(props: Props) {
         <div className="mt-6 flex flex-col sm:flex-row gap-4 max-w-md w-full">
           <Button
             asChild
-            className="bg-gray-800 text-white hover:bg-gray-700 flex-1"
+            className="bg-gray-999 border text-white hover:bg-pink-600/20 flex-1"
           >
-            <a href="https://x.com/lofi_dreamz" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/techkeyz" target="_blank" rel="noopener noreferrer">
               x profile
             </a>
           </Button>
           <Button
             asChild
-            className="bg-gray-800 text-white hover:bg-gray-700 flex-1"
+            className="mb-6 bg-gray-999 border text-white hover:bg-pink-600/20 flex-1"
           >
             <a href="https://www.fractalvisions.io/mint/super-portal" target="_blank" rel="noopener noreferrer">
               Fractal Visions Marketplace

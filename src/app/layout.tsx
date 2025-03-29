@@ -8,8 +8,8 @@ import { ToastProvider } from "@/components/ui/toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Super Portal",
-	description: "Superseed Open Edition NFT",
+	title: "Seeded",
+	description: "Seeded OE",
 };
 
 export default function RootLayout({
