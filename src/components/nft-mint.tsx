@@ -17,6 +17,7 @@ import {
   NFTMedia,
   NFTProvider,
   useActiveAccount,
+  useReadContract,
 } from "thirdweb/react";
 import { client } from "@/lib/thirdwebClient";
 import React from "react";
@@ -43,6 +44,15 @@ export function NftMint(props: Props) {
   const [customAddress, setCustomAddress] = useState("");
   const { theme, setTheme } = useTheme();
   const account = useActiveAccount();
+
+  // Fetch total supply based on token standard
+  const { data: totalSupply, isLoading: isSupplyLoading } = useReadContract({
+    contract: props.contract,
+    method: props.isERC1155
+      ? "function totalSupply(uint256 id) view returns (uint256)" // Updated for ERC1155
+      : "function totalSupply() view returns (uint256)", // ERC721
+    params: props.isERC1155 ? [props.tokenId] : [],
+  });
 
   const decreaseQuantity = () => {
     setQuantity((prev) => Math.max(1, prev - 1));
@@ -119,6 +129,14 @@ export function NftMint(props: Props) {
                 {props.pricePerToken} {props.currencySymbol}/each
               </div>
             </div>
+                {/* Total Claimed Display */}
+                <div className="text-white text-sm mb-4">
+              {isSupplyLoading ? (
+                "Loading supply..."
+              ) : (
+                <>Total Claimed: {totalSupply ? totalSupply.toString() : "0"}</>
+              )}
+            </div>
             <h2 className="text-2xl font-bold mb-2 text-white">
               {props.displayName}
             </h2>
@@ -156,6 +174,7 @@ export function NftMint(props: Props) {
                 Total: {props.pricePerToken * quantity} {props.currencySymbol}
               </div>
             </div>
+
 
             <div className="flex items-center space-x-2 mb-4">
               <Switch
