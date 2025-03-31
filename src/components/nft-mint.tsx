@@ -252,7 +252,7 @@ export function NftMint(props: Props) {
             asChild
             className="mb-6 bg-gray-999 border text-white hover:bg-pink-600/20 flex-1"
           >
-            <a href="https://www.fractalvisions.io/mint/super-portal" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.fractalvisions.io/mint/seeded" target="_blank" rel="noopener noreferrer">
               Fractal Visions Marketplace
             </a>
           </Button>
